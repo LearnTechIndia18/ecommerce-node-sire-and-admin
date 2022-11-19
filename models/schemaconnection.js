@@ -12,6 +12,7 @@ const importedpaymentSchema = require('../schemas/paymentSchema');
 const importedconfigSchema = require('../schemas/configschema');
 const importedLoginSchema = require('../schemas/loginSchema');
 const importeduserSchema = require('../schemas/userschema');
+const importedconfigOptionSchema = require('../schemas/configOptionSchema');
 
 // Creating schema
 const FaqSchema = mongoose.Schema(importedfaqSchema, { timestamps: true, versionKey: false });
@@ -25,6 +26,7 @@ const PaymentSchema = mongoose.Schema(importedpaymentSchema,{timestamps: true, v
 const configSchema = mongoose.Schema(importedconfigSchema,{timestamps: true, versionKey: false });
 const LoginSchema = mongoose.Schema(importedLoginSchema,{timestamps: true, versionKey: false });
 const userSchema = mongoose.Schema(importeduserSchema, { timestamps: true, versionKey: false });
+const configOptionSchema = mongoose.Schema(importedconfigOptionSchema,{timestamps:true,versionKey:false});
 
 // Creating models
 const FaqModel = mongoose.model('faqs', FaqSchema);
@@ -38,6 +40,7 @@ const PaymentModel= mongoose.model('payments',PaymentSchema)
 const ConfigModel= mongoose.model('config',configSchema)
 const LoginModel= mongoose.model('logins',LoginSchema)
 const userModel = mongoose.model('user', userSchema);
+const ConfigOptionModel=mongoose.model('configOption',configOptionSchema)
 
 module.exports = {
   faqs: FaqModel,
@@ -50,5 +53,6 @@ module.exports = {
   payments:PaymentModel,
   config:ConfigModel,
   logins:LoginModel,
-  user: userModel
+  user: userModel,
+  configOption:ConfigOptionModel
 }

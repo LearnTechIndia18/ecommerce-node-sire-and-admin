@@ -12,4 +12,5 @@ module.exports = function(app) {
   app.use(BaseUrl+"login", require("../controllers/admin/login"));
   app.use(BaseUrl+"auth", require("../controllers/admin/auth/verifyToken"));
   app.use(BaseUrl+"user", require("../controllers/site/user"));
+  app.use(BaseUrl+"configOption", require("../controllers/admin/configOption"));
 }
